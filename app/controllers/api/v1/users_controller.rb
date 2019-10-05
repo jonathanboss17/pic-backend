@@ -16,9 +16,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show 
-        render json: current_user(:include => {
-            :posts => {:include => [:likes, :comments]}
-        })
+        render json: current_user
     end
 
     private
